@@ -13,6 +13,7 @@ int	ft_printf(const char *fmt, ...)
 	int			n;
 	const char	*start;
 	char		c;
+   char *s;
 
 	n = 0;
 	if (fmt == NULL)
@@ -35,6 +36,16 @@ int	ft_printf(const char *fmt, ...)
 				ft_putchar(c);
 				n++;
 			}
+         else if (*fmt == 's')
+         {
+            s = va_arg(ap,char *);
+            while(*s)
+            {
+               ft_putchar(*s);
+               s++;
+               n++;
+            }
+         }
 		}
 		fmt++;
 	}
@@ -44,5 +55,6 @@ int	ft_printf(const char *fmt, ...)
 
 int	main(void)
 {
-	ft_printf("%c", 'a');
+   char *str = "hello";
+	ft_printf("%s", str);
 }
