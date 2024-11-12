@@ -6,6 +6,22 @@ void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
+void	ft_putnbr(int n, int *count)
+{
+	if (n < 0)
+	{
+		ft_putchar('-');
+      n = -n;
+      (*count)++;
+	}
+	if (n >= 10)
+	{
+		ft_putnbr(n / 10, count);
+	}
+	ft_putchar(n % 10 + '0');
+   (*count)++;
+}
+
 
 int	ft_printf(const char *fmt, ...)
 {
@@ -14,6 +30,7 @@ int	ft_printf(const char *fmt, ...)
 	const char	*start;
 	char		c;
    char *s;
+   int i;
 
 	n = 0;
 	if (fmt == NULL)
@@ -46,6 +63,11 @@ int	ft_printf(const char *fmt, ...)
                n++;
             }
          }
+         else if (*fmt == 'd' || *fmt == 'i')
+         {
+           i = va_arg(ap, int);
+           ft_putnbr(i, &n);
+         }
 		}
 		fmt++;
 	}
@@ -55,6 +77,6 @@ int	ft_printf(const char *fmt, ...)
 
 int	main(void)
 {
-   char *str = "hello";
-	ft_printf("%s", str);
+   // char *str = "hello";
+	ft_printf("%d", 120003);
 }
