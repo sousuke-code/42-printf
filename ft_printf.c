@@ -22,6 +22,17 @@ void	ft_putnbr(int n, int *count)
    (*count)++;
 }
 
+void ft_putnbr_unsigned(unsigned int i, int *count)
+{
+
+	if (i >= 10)
+	{
+		ft_putnbr_unsigned(i / 10, count);
+	}
+	ft_putchar(i % 10 + '0');
+	(*count)++;
+}
+
 
 int	ft_printf(const char *fmt, ...)
 {
@@ -31,6 +42,7 @@ int	ft_printf(const char *fmt, ...)
 	char		c;
    char *s;
    int i;
+   unsigned int ui;
 
 	n = 0;
 	if (fmt == NULL)
@@ -68,6 +80,12 @@ int	ft_printf(const char *fmt, ...)
            i = va_arg(ap, int);
            ft_putnbr(i, &n);
          }
+		 else if (*fmt == 'u')
+		 {
+           ui = va_arg(ap, unsigned int);
+		   ft_putnbr_unsigned(ui, &n);
+
+		 }
 		}
 		fmt++;
 	}
@@ -78,5 +96,6 @@ int	ft_printf(const char *fmt, ...)
 int	main(void)
 {
    // char *str = "hello";
-	ft_printf("%d", 120003);
+	// ft_printf("%d", 120003);
+   printf("pritf : %u \n", -12345);
 }
