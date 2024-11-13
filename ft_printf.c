@@ -52,6 +52,25 @@ void ft_put_hex(unsigned int i, int *count)
 	}
 }
 
+void ft_put_hex_upper(unsigned int i, int *count)
+{
+	int tmp;
+	if (i >= 16)
+	{
+		ft_put_hex_upper(i / 16, count);
+	}
+	tmp = i % 16;
+	if (tmp < 10){
+	  ft_putchar('0' + tmp);
+	  (*count)++;
+	}
+	else
+	{
+	  ft_putchar('A' + (tmp - 10));
+	  (*count)++;
+	}
+}
+
 
 int	ft_printf(const char *fmt, ...)
 {
@@ -109,6 +128,11 @@ int	ft_printf(const char *fmt, ...)
 			ui = va_arg(ap, unsigned int);
 			ft_put_hex(ui, &n);
 		 }
+		 else if (*fmt == 'X')
+		 {
+			ui = va_arg(ap, unsigned int);
+			ft_put_hex_upper(ui, &n);
+		 }
 		}
 		fmt++;
 	}
@@ -120,6 +144,6 @@ int	main(void)
 {
    // char *str = "hello";
 	// ft_printf("%d", 120003);
-   printf("pritf : %x \n", -2345);
-   ft_printf("ft_pritf : %x \n", -2345);
+   printf("pritf : %X \n", -2345);
+   ft_printf("ft_pritf : %X \n", -2345);
 }
