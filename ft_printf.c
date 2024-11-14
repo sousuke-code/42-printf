@@ -163,6 +163,7 @@ int	ft_printf(const char *fmt, ...)
 		 {
 			pi = (unsigned long long)va_arg(ap, void *);
 			write(1,"0x",2);
+			n += 2;
 			ft_put_ptr(pi, &n);
 		 }
 		}
@@ -174,6 +175,7 @@ int	ft_printf(const char *fmt, ...)
 
 int	main(void)
 {
-	printf("printf :%p\n", "aiueo");
-	ft_printf("ft_printf : %p\n", "aiueo");
+	printf("printf :%d %s\n", 12345, (char *)NULL);
+	ft_printf("ft_printf :%d %s\n", 12345,(char *)NULL);
+
 }
