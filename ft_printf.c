@@ -133,6 +133,11 @@ int	ft_printf(const char *fmt, ...)
 			ui = va_arg(ap, unsigned int);
 			ft_put_hex_upper(ui, &n);
 		 }
+		 else if (*fmt == '%')
+		 {
+            write(1,"%%",1);
+			n++;
+		 }
 		}
 		fmt++;
 	}
@@ -144,6 +149,6 @@ int	main(void)
 {
    // char *str = "hello";
 	// ft_printf("%d", 120003);
-   printf("pritf : %X \n", -2345);
-   ft_printf("ft_pritf : %X \n", -2345);
+   printf("pritf : %%\n");
+   ft_printf("ft_printf : %%\n");
 }
