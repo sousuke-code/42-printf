@@ -71,6 +71,26 @@ void ft_put_hex_upper(unsigned int i, int *count)
 	}
 }
 
+void ft_put_ptr(unsigned long long i, int *count)
+{
+	int tmp;
+
+	if (i >= 16)
+	{
+		ft_put_ptr(i /16 , count);
+	}
+	tmp = i % 16;
+	if (tmp < 10) {
+		ft_putchar('0' + tmp);
+		(*count)++;
+	}
+	else
+	{
+		ft_putchar('a' + (tmp - 10));
+		(*count)++;
+	}
+
+}
 
 int	ft_printf(const char *fmt, ...)
 {
@@ -81,6 +101,7 @@ int	ft_printf(const char *fmt, ...)
    char *s;
    int i;
    unsigned int ui;
+   unsigned long long pi;
 
 	n = 0;
 	if (fmt == NULL)
@@ -138,6 +159,12 @@ int	ft_printf(const char *fmt, ...)
             write(1,"%%",1);
 			n++;
 		 }
+		 else if (*fmt == 'p')
+		 {
+			pi = (unsigned long long)va_arg(ap, void *);
+			write(1,"0x",2);
+			ft_put_ptr(pi, &n);
+		 }
 		}
 		fmt++;
 	}
@@ -147,8 +174,6 @@ int	ft_printf(const char *fmt, ...)
 
 int	main(void)
 {
-   // char *str = "hello";
-	// ft_printf("%d", 120003);
-   printf("pritf : %%\n");
-   ft_printf("ft_printf : %%\n");
+	printf("printf :%p\n", "aiueo");
+	ft_printf("ft_printf : %p\n", "aiueo");
 }
