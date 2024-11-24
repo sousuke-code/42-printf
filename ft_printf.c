@@ -80,8 +80,7 @@ int	ft_printf(const char *fmt, ...)
 	int		n;
 
 	n = 0;
-	if (fmt == NULL)
-		n = -1;
+
 	va_start(ap, fmt);
 	while (n >= 0 && *fmt)
 	{
@@ -101,3 +100,8 @@ int	ft_printf(const char *fmt, ...)
 	return (n);
 }
 
+int main(void)
+{
+	printf("%s",NULL);
+	
+}

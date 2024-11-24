@@ -20,3 +20,8 @@ int main(void)
     ft_printf("%d\n", INT_MIN);
 }
 * 
+
+
+## NULL
+printf(NULL);
+ft_printf(NULL);
