@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_put_hex.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sosmiyat <sosmiyat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/24 17:45:27 by sosmiyat          #+#    #+#             */
-/*   Updated: 2024/11/24 17:46:05 by sosmiyat         ###   ########.fr       */
+/*   Created: 2024/11/24 17:44:41 by sosmiyat          #+#    #+#             */
+/*   Updated: 2024/11/24 17:46:23 by sosmiyat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr(int n, int *count)
+void	ft_put_hex(unsigned int i, int *count)
 {
-	long	ln;
+	int	tmp;
 
-	ln = n;
-	if (ln < 0)
+	if (i >= 16)
 	{
-		ft_putchar('-');
-		ln = -ln;
+		ft_put_hex(i / 16, count);
+	}
+	tmp = i % 16;
+	if (tmp < 10)
+	{
+		ft_putchar('0' + tmp);
 		(*count)++;
 	}
-	if (ln >= 10)
+	else
 	{
-		ft_putnbr(ln / 10, count);
+		ft_putchar('a' + (tmp - 10));
+		(*count)++;
 	}
-	ft_putchar(ln % 10 + '0');
-	(*count)++;
 }

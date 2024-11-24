@@ -1,63 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_format_handler.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sosmiyat <sosmiyat@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/24 15:13:41 by sosmiyat          #+#    #+#             */
+/*   Updated: 2024/11/24 17:47:31 by sosmiyat         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	format_handler(const char *fmt, va_list ap, int count)
+int	ft_format_handler(const char *fmt, va_list ap, int count)
 {
-	char c;
-	char *s;
-	int i;
-	unsigned int ui;
-	unsigned long long pi;
-
 	if (*fmt == 'c')
 	{
-		c = (char)va_arg(ap, int);
-		ft_putchar(c);
+		ft_putchar((char)va_arg(ap, int));
 		count++;
 	}
 	else if (*fmt == 's')
-	{
-		s = va_arg(ap, char *);
-		if (!s)
-			s = "(null)";
-		while (*s)
-		{
-			ft_putchar(*s);
-			s++;
-			count++;
-		}
-	}
+		ft_put_pointer_char(va_arg(ap, char *), &count);
 	else if (*fmt == 'd' || *fmt == 'i')
-	{
-		i = va_arg(ap, int);
-		ft_putnbr(i, &count);
-	}
+		ft_putnbr(va_arg(ap, int), &count);
 	else if (*fmt == 'u')
-	{
-		ui = va_arg(ap, unsigned int);
-		ft_putnbr_unsigned(ui, &count);
-	}
+		ft_putnbr_unsigned(va_arg(ap, unsigned int), &count);
 	else if (*fmt == 'x')
-	{
-		ui = va_arg(ap, unsigned int);
-		ft_put_hex(ui, &count);
-	}
+		ft_put_hex(va_arg(ap, unsigned int), &count);
 	else if (*fmt == 'X')
-	{
-		ui = va_arg(ap, unsigned int);
-		ft_put_hex_upper(ui, &count);
-	}
+		ft_put_hex_upper(va_arg(ap, unsigned int), &count);
 	else if (*fmt == '%')
-	{
-		write(1, "%%", 1);
-		count++;
-	}
+		ft_put_per(&count);
 	else if (*fmt == 'p')
-	{
-		pi = (unsigned long long)va_arg(ap, void *);
-		write(1, "0x", 2);
-		count += 2;
-		ft_put_ptr(pi, &count);
-	}
+		ft_put_ptr((unsigned long long)va_arg(ap, void *), &count);
 	return (count);
 }

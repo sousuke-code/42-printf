@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_put_pointer_char.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sosmiyat <sosmiyat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/24 17:45:27 by sosmiyat          #+#    #+#             */
-/*   Updated: 2024/11/24 17:46:05 by sosmiyat         ###   ########.fr       */
+/*   Created: 2024/11/24 17:45:01 by sosmiyat          #+#    #+#             */
+/*   Updated: 2024/11/24 17:46:55 by sosmiyat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr(int n, int *count)
+void	ft_put_pointer_char(char *s, int *count)
 {
-	long	ln;
-
-	ln = n;
-	if (ln < 0)
+	if (!s)
 	{
-		ft_putchar('-');
-		ln = -ln;
-		(*count)++;
+		write(1, "(null)", 6);
+		(*count) += 6;
 	}
-	if (ln >= 10)
+	else
 	{
-		ft_putnbr(ln / 10, count);
+		while (*s)
+		{
+			write(1, s, 1);
+			s++;
+			(*count)++;
+		}
 	}
-	ft_putchar(ln % 10 + '0');
-	(*count)++;
 }
