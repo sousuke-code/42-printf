@@ -6,7 +6,7 @@
 /*   By: miyatasoujo <miyatasoujo@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 15:12:35 by sosmiyat          #+#    #+#             */
-/*   Updated: 2024/11/30 16:45:38 by miyatasoujo      ###   ########.fr       */
+/*   Updated: 2024/11/30 17:11:11 by miyatasoujo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,9 @@ int	ft_printf(const char *fmt, ...)
 	}
 	va_end(ap);
 	return (n);
+}
+
+int main(void)
+{
+	ft_printf("");
 }

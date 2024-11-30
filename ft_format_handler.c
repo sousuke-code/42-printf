@@ -6,7 +6,7 @@
 /*   By: miyatasoujo <miyatasoujo@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 15:13:41 by sosmiyat          #+#    #+#             */
-/*   Updated: 2024/11/30 16:38:06 by miyatasoujo      ###   ########.fr       */
+/*   Updated: 2024/11/30 17:04:44 by miyatasoujo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	ft_format_handler(const char *fmt, va_list ap, int count)
 {
+	unsigned int x;
 	if (*fmt == 'c')
 	{
 		ft_putchar((char)va_arg(ap, int));
@@ -26,7 +27,10 @@ int	ft_format_handler(const char *fmt, va_list ap, int count)
 	else if (*fmt == 'u')
 		ft_putnbr_unsigned(va_arg(ap, unsigned int), &count);
 	else if (*fmt == 'x')
-		ft_put_hex(va_arg(ap, unsigned int), &count);
+	{
+	    x = va_arg(ap, unsigned int);
+		ft_put_hex(x, &count);
+	}
 	else if (*fmt == 'X')
 		ft_put_hex_upper(va_arg(ap, unsigned int), &count);
 	else if (*fmt == '%')

@@ -7,6 +7,15 @@
 
 
 ## テストケース
+int main(void)
+{
+    printf(" ", NULL);
+    ft_printf(" ", NULL);
+    printf("")
+    ft_printf("")
+    printf("", NULL);
+    ft_printf("",NULL);
+}
 * %d指定子
 int main(void)
 {
@@ -26,6 +35,12 @@ int main(void)
     ft_printf("オリジナル: %d \n", "aiueon");
     printf("本家: %d \n", (char *)NULL);
     ft_printf("オリジナル: %d \n", (char *)NULL);
+}
+* %x, %X 指定子
+int main(void)
+{
+    ft_printf("%x", LONG_MAX);
+    ft_printf("%x",INT_MIN)
 }
 
 * %p指定子
