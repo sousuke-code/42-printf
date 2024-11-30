@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_put_hex_long.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sosmiyat <sosmiyat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miyatasoujo <miyatasoujo@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 17:44:29 by sosmiyat          #+#    #+#             */
-/*   Updated: 2024/11/24 17:47:17 by sosmiyat         ###   ########.fr       */
+/*   Updated: 2024/11/30 16:38:59 by miyatasoujo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_put_hex_long(unsigned long long i, int *count)
+void	ft_put_hex_long(uintptr_t i, int *count)
 {
 	int	tmp;
 

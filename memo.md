@@ -31,9 +31,13 @@ int main(void)
 * %p指定子
 int main(void)
 {
-	printf("%p",NULL);
-	ft_printf("%p", NULL);
+    pritnf("本家:%p\n", "aiueo");
+    ft_printf("オリジナル:%p\n", "aiueo");
+	printf("本家:%p\n",NULL);
+	ft_printf("オリジナル:%p\n", NULL);
 }
+
+* 
 
 ## NULL
 printf(NULL);
