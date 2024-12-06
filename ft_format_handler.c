@@ -6,7 +6,7 @@
 /*   By: sosmiyat <sosmiyat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 15:13:41 by sosmiyat          #+#    #+#             */
-/*   Updated: 2024/12/06 15:42:37 by sosmiyat         ###   ########.fr       */
+/*   Updated: 2024/12/06 15:46:48 by sosmiyat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ int	ft_format_handler(const char *fmt, va_list ap, int count,char c)
 		ft_put_ptr((uintptr_t)va_arg(ap, void *), &count);
 	else 
 	    write(1, &c,1);
-		count++;
+		count += 2;
 	return (count);
 }
