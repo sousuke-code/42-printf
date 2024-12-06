@@ -57,3 +57,14 @@ int main(void)
 ## NULL
 printf(NULL);
 ft_printf(NULL);
+
+int main(void)
+{
+   ft_printf("% \n");
+   printf("% \n");
+}
+
+int main(void)
+{
+    
+}

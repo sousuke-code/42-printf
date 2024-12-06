@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miyatasoujo <miyatasoujo@student.42.fr>    +#+  +:+       +#+        */
+/*   By: sosmiyat <sosmiyat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 15:35:33 by sosmiyat          #+#    #+#             */
-/*   Updated: 2024/11/30 16:39:31 by miyatasoujo      ###   ########.fr       */
+/*   Updated: 2024/12/06 15:41:30 by sosmiyat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 int		ft_printf(const char *fmt, ...);
 
-int		ft_format_handler(const char *fmt, va_list ap, int count);
+int		ft_format_handler(const char *fmt, va_list ap, int count,char c);
 
 void	ft_put_pointer_char(char *s, int *count);
 

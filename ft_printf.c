@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miyatasoujo <miyatasoujo@student.42.fr>    +#+  +:+       +#+        */
+/*   By: sosmiyat <sosmiyat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 15:12:35 by sosmiyat          #+#    #+#             */
-/*   Updated: 2024/11/30 17:11:11 by miyatasoujo      ###   ########.fr       */
+/*   Updated: 2024/12/06 15:42:29 by sosmiyat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "limits.h"
 
 int	ft_printf(const char *fmt, ...)
 {
 	va_list	ap;
 	int		n;
+	char c;
 
 	n = 0;
 	va_start(ap, fmt);
@@ -28,8 +30,9 @@ int	ft_printf(const char *fmt, ...)
 		}
 		else
 		{
+			c = *fmt;
 			fmt++;
-			n = ft_format_handler(fmt, ap, n);
+			n = ft_format_handler(fmt, ap, n,c);
 		}
 		fmt++;
 	}
@@ -39,5 +42,6 @@ int	ft_printf(const char *fmt, ...)
 
 int main(void)
 {
-	ft_printf("");
+   ft_printf("自作関数の挙動:%d\n",ft_printf("自作関数の挙動:% \n"));
+   printf("本家の挙動:%d\n", printf("本家の挙動:% \n"));
 }
