@@ -6,7 +6,7 @@
 /*   By: sosmiyat <sosmiyat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 15:35:33 by sosmiyat          #+#    #+#             */
-/*   Updated: 2024/12/06 15:41:30 by sosmiyat         ###   ########.fr       */
+/*   Updated: 2024/12/06 15:51:50 by sosmiyat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 int		ft_printf(const char *fmt, ...);
 
-int		ft_format_handler(const char *fmt, va_list ap, int count,char c);
+int		ft_format_handler(const char *fmt, va_list ap, int count);
 
 void	ft_put_pointer_char(char *s, int *count);
 

@@ -6,13 +6,13 @@
 /*   By: sosmiyat <sosmiyat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 15:13:41 by sosmiyat          #+#    #+#             */
-/*   Updated: 2024/12/06 15:46:48 by sosmiyat         ###   ########.fr       */
+/*   Updated: 2024/12/06 15:51:30 by sosmiyat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_format_handler(const char *fmt, va_list ap, int count,char c)
+int	ft_format_handler(const char *fmt, va_list ap, int count)
 {
 	if (*fmt == 'c')
 	{
@@ -33,8 +33,5 @@ int	ft_format_handler(const char *fmt, va_list ap, int count,char c)
 		ft_put_per(&count);
 	else if (*fmt == 'p')
 		ft_put_ptr((uintptr_t)va_arg(ap, void *), &count);
-	else 
-	    write(1, &c,1);
-		count += 2;
 	return (count);
 }

@@ -6,7 +6,7 @@
 /*   By: sosmiyat <sosmiyat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 15:12:35 by sosmiyat          #+#    #+#             */
-/*   Updated: 2024/12/06 15:44:37 by sosmiyat         ###   ########.fr       */
+/*   Updated: 2024/12/06 16:56:51 by sosmiyat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_printf(const char *fmt, ...)
 		{
 			c = *fmt;
 			fmt++;
-			n = ft_format_handler(fmt, ap, n,c);
+			n = ft_format_handler(fmt, ap, n);
 		}
 		fmt++;
 	}
@@ -42,6 +42,6 @@ int	ft_printf(const char *fmt, ...)
 
 int main(void)
 {
-   ft_printf("自作関数の挙動:%d\n",ft_printf("本家の挙動:% \n"));
-   printf("本家の挙動:%d\n", printf("本家の挙動:% \n"));
+	ft_printf("%d\n", ft_printf("% \n"));
+	printf("%d\n", printf("% \n"));
 }
