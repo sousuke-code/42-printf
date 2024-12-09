@@ -6,29 +6,30 @@
 /*   By: miyatasoujo <miyatasoujo@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 17:44:29 by sosmiyat          #+#    #+#             */
-/*   Updated: 2024/11/30 16:38:59 by miyatasoujo      ###   ########.fr       */
+/*   Updated: 2024/12/06 23:05:59 by miyatasoujo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_put_hex_long(uintptr_t i, int *count)
+int	ft_put_hex_long(uintptr_t i)
 {
 	int	tmp;
+	int count;
 
+    count = 0;
 	if (i >= 16)
 	{
-		ft_put_hex_long(i / 16, count);
+		count += ft_put_hex_long(i / 16);
 	}
 	tmp = i % 16;
 	if (tmp < 10)
 	{
-		ft_putchar('0' + tmp);
-		(*count)++;
+		count += ft_putchar('0' + tmp);
 	}
 	else
 	{
-		ft_putchar('a' + (tmp - 10));
-		(*count)++;
+		count += ft_putchar('a' + (tmp - 10));
 	}
+	return count;
 }

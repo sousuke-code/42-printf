@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_put_per.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sosmiyat <sosmiyat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miyatasoujo <miyatasoujo@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 17:44:53 by sosmiyat          #+#    #+#             */
-/*   Updated: 2024/11/24 17:47:06 by sosmiyat         ###   ########.fr       */
+/*   Updated: 2024/12/06 23:07:47 by miyatasoujo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_put_per(int *count)
+int 	ft_put_per()
 {
 	write(1, "%%", 1);
-	(*count)++;
+	return 1;
 }

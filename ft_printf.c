@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sosmiyat <sosmiyat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miyatasoujo <miyatasoujo@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 15:12:35 by sosmiyat          #+#    #+#             */
-/*   Updated: 2024/12/06 16:56:51 by sosmiyat         ###   ########.fr       */
+/*   Updated: 2024/12/09 23:27:14 by miyatasoujo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	ft_printf(const char *fmt, ...)
 {
 	va_list	ap;
 	int		n;
-	char c;
 
 	n = 0;
 	va_start(ap, fmt);
@@ -25,14 +24,12 @@ int	ft_printf(const char *fmt, ...)
 	{
 		if (*fmt != '%')
 		{
-			ft_putchar(*fmt);
-			n++;
+			n += ft_putchar(*fmt);
 		}
 		else
 		{
-			c = *fmt;
 			fmt++;
-			n = ft_format_handler(fmt, ap, n);
+			n += ft_format_handler(fmt, ap);
 		}
 		fmt++;
 	}
@@ -42,6 +39,5 @@ int	ft_printf(const char *fmt, ...)
 
 int main(void)
 {
-	ft_printf("%d\n", ft_printf("% \n"));
-	printf("%d\n", printf("% \n"));
+	ft_printf(" %p %p ", 0, 0);
 }

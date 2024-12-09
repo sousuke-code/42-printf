@@ -3,21 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_unsigned.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sosmiyat <sosmiyat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miyatasoujo <miyatasoujo@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 17:45:22 by sosmiyat          #+#    #+#             */
-/*   Updated: 2024/11/24 17:46:07 by sosmiyat         ###   ########.fr       */
+/*   Updated: 2024/12/06 23:07:28 by miyatasoujo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr_unsigned(unsigned int i, int *count)
+int 	ft_putnbr_unsigned(unsigned int i)
 {
+	int count;
+	count = 0;
 	if (i >= 10)
 	{
-		ft_putnbr_unsigned(i / 10, count);
+		count += ft_putnbr_unsigned(i / 10);
 	}
 	ft_putchar(i % 10 + '0');
-	(*count)++;
+	count++;
+	return count;
 }

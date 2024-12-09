@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sosmiyat <sosmiyat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miyatasoujo <miyatasoujo@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 15:35:33 by sosmiyat          #+#    #+#             */
-/*   Updated: 2024/12/06 15:51:50 by sosmiyat         ###   ########.fr       */
+/*   Updated: 2024/12/06 23:01:59 by miyatasoujo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,24 +22,24 @@
 
 int		ft_printf(const char *fmt, ...);
 
-int		ft_format_handler(const char *fmt, va_list ap, int count);
+int		ft_format_handler(const char *fmt, va_list ap);
 
-void	ft_put_pointer_char(char *s, int *count);
+int 	ft_put_pointer_char(char *s);
 
-void	ft_put_ptr(uintptr_t i, int *count);
+int 	ft_put_ptr(uintptr_t i);
 
-void	ft_put_hex_upper(unsigned int i, int *count);
+int 	ft_put_hex_upper(unsigned int i);
 
-void	ft_put_hex(unsigned int i, int *count);
+int 	ft_put_hex(unsigned int i);
 
-void	ft_putnbr_unsigned(unsigned int i, int *count);
+int 	ft_putnbr_unsigned(unsigned int i);
 
-void	ft_putnbr(int n, int *count);
+int 	ft_putnbr(int n);
 
-void	ft_putchar(char c);
+int 	ft_putchar(char c);
 
-void	ft_put_per(int *count);
+int 	ft_put_per();
 
-void	ft_put_hex_long(uintptr_t i, int *count);
+int 	ft_put_hex_long(uintptr_t i);
 
 #endif
