@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_put_hex_long.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miyatasoujo <miyatasoujo@student.42.fr>    +#+  +:+       +#+        */
+/*   By: sousuke <sousuke@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 17:44:29 by sosmiyat          #+#    #+#             */
-/*   Updated: 2024/12/06 23:05:59 by miyatasoujo      ###   ########.fr       */
+/*   Updated: 2024/12/15 02:35:57 by sousuke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int	ft_put_hex_long(uintptr_t i)
 {
 	int	tmp;
-	int count;
+	int	count;
 
-    count = 0;
+	count = 0;
 	if (i >= 16)
 	{
 		count += ft_put_hex_long(i / 16);
@@ -31,5 +31,5 @@ int	ft_put_hex_long(uintptr_t i)
 	{
 		count += ft_putchar('a' + (tmp - 10));
 	}
-	return count;
+	return (count);
 }

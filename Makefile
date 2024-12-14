@@ -5,7 +5,6 @@ SRCS =	ft_printf.c \
         ft_format_handler.c \
 		ft_putnbr.c \
 		ft_putchar.c \
-		ft_put_hex_upper.c \
 		ft_put_hex.c \
 		ft_put_ptr.c \
 		ft_putnbr_unsigned.c \

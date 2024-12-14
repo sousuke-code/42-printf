@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miyatasoujo <miyatasoujo@student.42.fr>    +#+  +:+       +#+        */
+/*   By: sousuke <sousuke@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 15:12:35 by sosmiyat          #+#    #+#             */
-/*   Updated: 2024/12/09 23:27:14 by miyatasoujo      ###   ########.fr       */
+/*   Updated: 2024/12/15 02:26:02 by sousuke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,4 @@ int	ft_printf(const char *fmt, ...)
 	}
 	va_end(ap);
 	return (n);
-}
-
-int main(void)
-{
-	ft_printf(" %p %p ", 0, 0);
 }

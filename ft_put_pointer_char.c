@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_put_pointer_char.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miyatasoujo <miyatasoujo@student.42.fr>    +#+  +:+       +#+        */
+/*   By: sousuke <sousuke@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 17:45:01 by sosmiyat          #+#    #+#             */
-/*   Updated: 2024/12/06 22:51:32 by miyatasoujo      ###   ########.fr       */
+/*   Updated: 2024/12/15 02:26:21 by sousuke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int 	ft_put_pointer_char(char *s)
+int	ft_put_pointer_char(char *s)
 {
-	int count;
+	int	count;
+
 	count = 0;
 	if (!s)
 	{
@@ -30,5 +31,5 @@ int 	ft_put_pointer_char(char *s)
 			count++;
 		}
 	}
-	return count;
+	return (count);
 }

@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miyatasoujo <miyatasoujo@student.42.fr>    +#+  +:+       +#+        */
+/*   By: sousuke <sousuke@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 17:45:27 by sosmiyat          #+#    #+#             */
-/*   Updated: 2024/12/06 22:54:23 by miyatasoujo      ###   ########.fr       */
+/*   Updated: 2024/12/15 02:26:37 by sousuke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int 	ft_putnbr(int n)
+int	ft_putnbr(int n)
 {
-	int count;
+	int		count;
 	long	ln;
 
 	count = 0;
@@ -31,5 +31,5 @@ int 	ft_putnbr(int n)
 	}
 	ft_putchar(ln % 10 + '0');
 	count++;
-	return count;
+	return (count);
 }
