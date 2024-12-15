@@ -49,8 +49,10 @@ int main(void)
 	ft_printf("オリジナル:%p\n", NULL);
 }
 
-* 
-
+*  mix
+{
+	ft_printf("Mixed: %c %s %d %i %u %x %X %% %p\n", 'B', "Mixed Test", 42, -42, 42U, 0x42, 0x42, (void *)0x42);
+}
 ## NULL
 printf(NULL);
 ft_printf(NULL);
