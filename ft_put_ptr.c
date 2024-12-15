@@ -6,7 +6,7 @@
 /*   By: sousuke <sousuke@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 17:45:07 by sosmiyat          #+#    #+#             */
-/*   Updated: 2024/12/15 02:34:40 by sousuke          ###   ########.fr       */
+/*   Updated: 2024/12/15 09:39:06 by sousuke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_put_ptr(uintptr_t i)
 	{
 		write(1, "0x", 2);
 		count += 2;
-		count += ft_put_hex(i);
+		count += ft_put_hex_long(i);
 	}
 	return (count);
 }
