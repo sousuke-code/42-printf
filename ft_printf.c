@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sosmiyat <sosmiyat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miyatasoujo <miyatasoujo@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 16:27:46 by sosmiyat          #+#    #+#             */
-/*   Updated: 2024/12/15 16:27:52 by sosmiyat         ###   ########.fr       */
+/*   Updated: 2024/12/27 23:17:37 by miyatasoujo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	ft_printf(const char *fmt, ...)
 
 	n = 0;
 	va_start(ap, fmt);
+	if (!fmt)
+	  return -1;
 	while (n >= 0 && *fmt)
 	{
 		if (*fmt != '%')
