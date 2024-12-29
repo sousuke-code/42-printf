@@ -6,7 +6,7 @@
 /*   By: sosmiyat <sosmiyat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 16:28:19 by sosmiyat          #+#    #+#             */
-/*   Updated: 2024/12/15 16:28:24 by sosmiyat         ###   ########.fr       */
+/*   Updated: 2024/12/29 14:29:27 by sosmiyat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,16 @@ int	ft_put_pointer_char(char *s)
 	count = 0;
 	if (!s)
 	{
-		write(1, "(null)", 6);
+		if (write(1, "(null)", 6) < 0)
+			return (-1);
 		count += 6;
 	}
 	else
 	{
 		while (*s)
 		{
-			write(1, s, 1);
+			if (write(1, s, 1) < 0)
+				return (-1);
 			s++;
 			count++;
 		}
